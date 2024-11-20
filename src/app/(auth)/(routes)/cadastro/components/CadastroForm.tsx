@@ -28,11 +28,10 @@ export function CadastroForm() {
   })
 
   const handleSubmit = useAsyncCallback(async (values: Usuario) => {
-    toast.success('Cadastrando...')
     try {
       await client.createUsuario(values)
       toast.success('Cadastro realizado com sucesso!')
-      router.push('/')
+      router.push('/perfil')
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message)
@@ -43,7 +42,7 @@ export function CadastroForm() {
   })
 
   return (
-    <form onSubmit={formik.handleSubmit} className="card bg-base-300 p-4 flex gap-4">
+    <form onSubmit={formik.handleSubmit} className="card bg-primary-content p-4 flex gap-4">
       <h2 className='font-bold text-4xl'>Credenciais</h2>
       <p>Você usará estas credenciais para realizar Login em nossa plataforma</p>
       <label>

@@ -15,12 +15,12 @@ export default {
     themes: [
       {
         light: {
-          ...themes.aqua,
+          ...themes.light,
         }
       },
       {
         dark: {
-          ...themes.dark,
+          ...themes.halloween,
         }
       }
     ]

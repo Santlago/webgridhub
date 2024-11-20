@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import "../globals.css"
-import { Header } from './components/Header'
 import { Footer } from './components/Footer'
-import { ThemeController } from '../components/ThemeController'
+import { Header } from './components/Header'
 
 export const metadata: Metadata = {
   title: "GridHub",
@@ -15,15 +14,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" data-theme="light">
-      <body className='bg-base-100 min-h-screen flex flex-col'>
-        <ThemeController />
-        <Header />
-        <main className='grow p-4 container mx-auto flex'>
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <div className='bg-base-100 min-h-screen flex flex-col'>
+      <Header />
+      <main className='grow p-4 container mx-auto flex'>
+        {children}
+      </main>
+      <Footer />
+    </div>
   )
 }
