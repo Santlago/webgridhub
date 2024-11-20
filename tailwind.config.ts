@@ -15,7 +15,7 @@ export default {
     themes: [
       {
         light: {
-          ...themes.light,
+          ...themes.aqua,
         }
       },
       {

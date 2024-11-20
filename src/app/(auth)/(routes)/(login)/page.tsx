@@ -9,8 +9,8 @@ export default function LoginRoute() {
       <aside className='fex-1 hidden lg:block'>
         <Image src="/LoginAside.png" alt="Logo" width={641} height={833} className='h-screen' />
       </aside>
-      <div className='flex-1 flex items-center'>
-        <div className='card bg-base-300 p-6'>
+      <div className='flex-1 flex justify-center items-center'>
+        <div className='card bg-base-300 p-6 flex gap-4'>
           <h1 className='dark:text-pink-200 text-blue-500'>Seja Bem-Vindo(a) de volta ao</h1>
           <Image src="/GridHubTextLogoBlack.png" alt="Logo" width={200} height={200} />
           <button
