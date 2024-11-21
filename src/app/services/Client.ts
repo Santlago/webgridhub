@@ -35,6 +35,10 @@ class Client {
     return (await this.axios.get<Usuario[]>("users")).data;
   }
 
+  async loginUsuario(usuario: undefined): Promise<undefined> {
+    return (await this.axios.post("api/auth/login", usuario))
+  }
+
   async createUsuario(usuario: Usuario) {
     const response = await this.axios.post("api/auth/signup", usuario);
     return response.data;

@@ -1,7 +1,9 @@
 "use client"
 
-import { signIn } from 'next-auth/react'
 import Image from 'next/image'
+import { LoginForm } from './components/LoginForm'
+import Link from 'next/link'
+import Logo from '/public/GridHubTextLogo.svg'
 
 export default function LoginRoute() {
   return (
@@ -9,16 +11,15 @@ export default function LoginRoute() {
       <aside className='fex-1 hidden lg:block'>
         <Image src="/LoginAside.png" alt="Logo" width={641} height={833} className='h-screen' />
       </aside>
-      <div className='flex-1 flex justify-center items-center'>
-        <div className='card bg-base-300 p-6 flex gap-4'>
-          <h1 className='dark:text-pink-200 text-blue-500'>Seja Bem-Vindo(a) de volta ao</h1>
-          <Image src="/GridHubTextLogoBlack.png" alt="Logo" width={200} height={200} />
-          <button
-            onClick={() => signIn('google')}
-            className='btn btn-primary'
-          >
-            Log in with Google
-          </button>
+      <div className='flex-1 flex flex-col w-full justify-center items-center'>
+        <div className='card p-6 w-full flex gap-4 max-w-[40rem]'>
+          <h1 className='text-center dark:text-blue-500'>Seja Bem-Vindo(a) de volta ao</h1>
+          <div>
+            <Logo width="100%" height="100%" />
+          </div>
+          <LoginForm />
+          <span className='text-center'>ou</span>
+          <Link href="cadastro" className='btn btn-outline btn-primary mx-4'>Cadastre-se</Link>
         </div>
       </div>
     </div>
