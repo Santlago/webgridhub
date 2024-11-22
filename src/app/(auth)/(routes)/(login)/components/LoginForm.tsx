@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import { useAsyncCallback } from 'react-async-hook'
 import { toast } from 'react-toastify'
 import { usuarioLoginSchema } from '../../../../../../schemas'
+import { setCookies } from '@/app/services/cookies'
 
 export function LoginForm() {
 
@@ -25,7 +26,9 @@ export function LoginForm() {
 
   const handleSubmit = useAsyncCallback(async (values) => {
     try {
-      await client.loginUsuario(values)
+      const response = await client.loginUsuario(values)
+      console.log('response', response)
+      await setCookies(response)
       toast.success('Login realizado com sucesso!')
       router.push('/perfil')
     } catch (error) {
@@ -55,7 +58,7 @@ export function LoginForm() {
       <label>
         <p>Senha</p>
         <input
-          type="text"
+          type="password"
           name='senha'
           onChange={formik.handleChange}
           className='input h-10 w-full'

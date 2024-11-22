@@ -31,7 +31,7 @@ export function CadastroForm() {
     try {
       await client.createUsuario(values)
       toast.success('Cadastro realizado com sucesso!')
-      router.push('/perfil')
+      router.push('/')
     } catch (error) {
       if (error instanceof Error) {
         toast.error(error.message)
