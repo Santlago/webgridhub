@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  images: {
+    domains: ["img.daisyui.com"],
+  }
 };
 
 export default nextConfig;

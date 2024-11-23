@@ -31,12 +31,8 @@ export function LoginForm() {
       await setCookies(response)
       toast.success('Login realizado com sucesso!')
       router.push('/perfil')
-    } catch (error) {
-      if (error instanceof Error) {
-        toast.error(error.message)
-      } else {
-        toast.error('Ocorreu um erro inesperado')
-      }
+    } catch {
+      toast.error('Credenciais incorretas')
     }
   })
 

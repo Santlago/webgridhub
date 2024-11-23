@@ -13,3 +13,9 @@ export async function getCookies() {
   const cookieStore = await cookies()
   return cookieStore.get('token')?.value
 }
+
+export async function deleteCookies() {
+  const cookieStore = await cookies()
+  cookieStore.delete('token')
+  cookieStore.delete('email')
+}

@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
-import { Token, Usuario, UsuarioLogin } from '../../../types'
+import { Espaco, Token, Usuario, UsuarioLogin } from '../../../types'
 
 class Client {
   private axios: AxiosInstance
@@ -40,18 +40,35 @@ class Client {
     return response.data
   }
 
-  async getPerfil(token: Token): Promise<Usuario> {
+  async getPerfil(token: string): Promise<Usuario> {
     const response = await this.axios.get<Usuario>("users/profile", {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
-    console.log('response', response)
     return response.data;
   }
 
   async getUsuarios(): Promise<Usuario[]> {
     return (await this.axios.get<Usuario[]>("users")).data
+  }
+
+  async getUsuarioEspacos(token: string, page: number = 0): Promise<Espaco[]> {
+    const response = await this.axios.get<{ content: Espaco[] }>(`usuarioespacos?page=${page}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    return response.data.content;
+  }
+
+  async getEspacos(token: string, page: number = 0): Promise<Espaco[]> {
+    const response = await this.axios.get<{ content: Espaco[] }>(`espacos?page=${page}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    return response.data.content;
   }
 }
 
