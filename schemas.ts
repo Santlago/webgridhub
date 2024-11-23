@@ -14,6 +14,8 @@ export const usuarioLoginSchema = yup.object({
   senha: yup.string().min(6).required().trim()
 })
 
+
+//espaco schema
 export const espacoSchema = yup.object({
   espaco_id: yup.string().nullable().optional(),
   // usuario: usuarioSchema.optional().nullable(),
