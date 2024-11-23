@@ -70,6 +70,19 @@ class Client {
     });
     return response.data.content;
   }
+
+  async createEspaco(token: string, espaco: Espaco) {
+    const response = await this.axios.post<Espaco>(
+      "usuarioespacos",
+      espaco,
+      {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }
+    )
+    return response.data
+  }
 }
 
 export default Client

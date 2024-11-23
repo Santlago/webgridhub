@@ -48,7 +48,7 @@ export default function MeusEspacos() {
             </div>
 
           ))}
-          <Link href={'/meusespacos/'} className='btn btn-primary'>
+          <Link href={'/meusespacos/cadastro'} className='btn btn-primary'>
             Adicionar Espaço
           </Link>
         </div>

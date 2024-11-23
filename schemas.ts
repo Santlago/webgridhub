@@ -15,16 +15,17 @@ export const usuarioLoginSchema = yup.object({
 })
 
 export const espacoSchema = yup.object({
-  espaco_id: yup.string().required(),
-  usuario: usuarioSchema,
+  espaco_id: yup.string().nullable().optional(),
+  // usuario: usuarioSchema.optional().nullable(),
   endereco: yup.string().required(),
-  fonte_energia: yup.string().optional(),
-  orientacao_solar: yup.string().optional(),
-  media_solar: yup.string().optional(),
-  topografia: yup.string().optional(),
-  area_total: yup.string().optional(),
-  direcao_vento: yup.string().optional(),
-  velocidade_vento: yup.string().optional(),
+  // fonte_energia: yup.string().optional(),
+  // orientacao_solar: yup.string().optional(),
+  // media_solar: yup.string().optional(),
+  // topografia: yup.string().optional(),
+  // area_total: yup.string().optional(),
+  // direcao_vento: yup.string().optional(),
+  // velocidade_vento: yup.string().optional(),
   nome_espaco: yup.string().required(),
-  foto_espaco: yup.mixed().optional()
+  // foto_espaco: yup.mixed().optional(),
+  descricao_espaco: yup.string().required()
 });

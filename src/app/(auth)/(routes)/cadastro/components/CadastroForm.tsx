@@ -70,7 +70,7 @@ export function CadastroForm() {
               className='input h-10 w-full'
             />
           </label>
-          {formik.errors.senha && formik.touched.email && (
+          {formik.errors.senha && formik.touched.senha && (
             <div className='text-error'>{formik.errors.senha}</div>
           )}
         </div>
